@@ -9,4 +9,4 @@ jobs:
       env:
         RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
       with:
-        args: copy ani:/ani 21tdm:/ani --ignore-existing -u -v -P --transfers=15 --ignore-errors --buffer-size=250M --check-first --checkers=10
+        args: copy ani:/ani 21tdm:/ani --ignore-existing -u -P --transfers=15 --ignore-errors --buffer-size=250M --check-first --checkers=10
