@@ -1,7 +1,7 @@
 on: 
   workflow_dispatch:
   schedule:
-    - cron: '*/375 * * * *'
+    - cron: '0 */6 * * *'
 jobs:
   rclone:
     runs-on: ubuntu-latest
