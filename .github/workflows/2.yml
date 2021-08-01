@@ -1,0 +1,15 @@
+on: 
+  workflow_dispatch:
+  schedule:
+    -cron:'*/375 * * * *'
+jobs:
+  rclone:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: rclone
+      uses: wei/rclone@v1
+      env:
+        RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
+      with:
+        args: copy ani:/ani 21tdm:/ani --ignore-existing -u -P --transfers=10 --ignore-errors --buffer-size=200M --check-first --checkers=20
