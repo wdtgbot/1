@@ -12,4 +12,4 @@ jobs:
       env:
         RCLONE_CONF: ${{ secrets.RCLONE_CONF }}
       with:
-        args: copy mov:/mov dm:/mov --ignore-existing -u -P --transfers=10 --ignore-errors --buffer-size=200M --check-first --checkers=20
+        args: copy mov:/mov dm:/mov -P --transfers=10 --ignore-errors --buffer-size=200M --check-first --checkers=20
